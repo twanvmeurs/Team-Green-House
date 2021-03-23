@@ -1,7 +1,25 @@
 ## Verduurzamingsadviestool lectoraat energietransitie Hogeschool Windesheim
 Binnen deze repo wordt het project bijgehouden. 
 
-# Installatie 
+# Installatie op Ubuntu
+Maak een Ubuntu v20.04 LTS server aan. Voer daarna de volgende commands uit.
+
+```bash
+sudo su
+rm -fr /tmp/Team-Green-House; git clone https://github.com/twanvmeurs/Team-Green-House/ /tmp/Team-Green-House; chown -R ubuntu:www-data /tmp/Team-Green-House && chmod -R 755 /tmp/Team-Green-House;  /tmp/Team-Green-House/./install.sh
+```
+
+Na installatie kun je de webapp bijwerken door 'rupdate' te typen. Dit is een macro waarmee je de webapp opnieuw download en installeert vanuit de master branche.
+
+<strong>Handmatig installeren uit een specifieke branche? </strong>
+Als je een test uit een branche op je server wilt installeren, gebruik dan de volgende commands. Vervang BRANCHENAAM met de branche die je wilt downloaden en installeren op de server.
+
+```bash
+sudo su
+rm -fr /tmp/Team-Green-House; git clone --single-branch --branch BRANCHENAAM https://github.com/twanvmeurs/Team-Green-House/ /tmp/Team-Green-House; chown -R ubuntu:www-data /tmp/Team-Green-House && chmod -R 755 /tmp/Team-Green-House;  /tmp/Team-Green-House/./install.sh
+```
+
+# Installatie op Windows of MacOS
 Volg de onderstaande stappen om de web app binnen je computer draaiende te krijgen. 
 <h2>Django installeren</h2>
 Installeer Python 3.8 op je computer, dit kan via de Windows Store, Chocolately (MacOS) of Anaconda. Controleer met welk command je Python aanroept, soms is dat 'py', soms is dat 'python'. Importeer deze Github repository daarna binnen je IDE. Nadat je de IDE hebt opgestart, voer je de volgende commands uit. 
